@@ -51,11 +51,13 @@ void main() {
     expect(tester.widget<Text>(counter).data, '0');
 
     // Tap the '+' icon and trigger a frame.
-    //await tester.tap(find.byIcon(Icons.add));
-    //await tester.pump();
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
 
     // Verify that our counter has incremented.
-    //expect(tester.widget<Text>(counter).data, '1');
+    expect(tester.widget<Text>(counter).data, '3');
 
     //await tester.tap(find.byTooltip('Reset to zero'));
     //await tester.pump();
